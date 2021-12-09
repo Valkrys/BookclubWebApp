@@ -30,7 +30,7 @@ export class HomepageComponent implements OnInit {
   events: CalendarEvent[] = [
     {
       start: startOfDay(new Date()),
-      title: "Bookclub" + this.nextMeeting.meetingBook,
+      title: "Bookclub " + this.nextMeeting.meetingBook,
     }
   ]
 
