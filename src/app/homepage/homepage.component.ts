@@ -14,8 +14,12 @@ export class HomepageComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.currentBook.title = "Placement book title";
+    this.nextMeeting.date = new Date("2022-01-02")
+    this.nextMeeting.chapter = "Until chapter 3: name of chapter"
   }
 
+  //currentImage: HTMLImageElement = new HTMLImageElement();
   currentBook: Book = new Book();
   nextMeeting: Meeting = new Meeting();
 
@@ -30,7 +34,7 @@ export class HomepageComponent implements OnInit {
   events: CalendarEvent[] = [
     {
       start: startOfDay(new Date()),
-      title: "Bookclub " + this.nextMeeting.meetingBook,
+      title: "Bookclub Meeting",
     }
   ]
 
