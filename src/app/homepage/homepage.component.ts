@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { startOfDay } from 'date-fns';
 import { CalendarView, CalendarEvent } from 'angular-calendar';
+import {Book} from "../models/Book";
+import {Meeting} from "../models/Meeting";
 
 @Component({
   selector: 'app-homepage',
@@ -13,6 +15,10 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  currentBook: Book = new Book();
+  nextMeeting: Meeting = new Meeting();
+
   viewDate: Date = new Date();
   view: CalendarView = CalendarView.Month;
   CalendarView = CalendarView;
@@ -24,11 +30,7 @@ export class HomepageComponent implements OnInit {
   events: CalendarEvent[] = [
     {
       start: startOfDay(new Date()),
-      title: 'First event',
-    },
-    {
-      start: startOfDay(new Date()),
-      title: 'Second event',
+      title: "Bookclub" + this.nextMeeting.meetingBook,
     }
   ]
 
